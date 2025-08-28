@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #086A10;
+  font-weight: 900;
+  font-size: 15px;
+}
+
+body {
+  background-color: #f0f0f0;
+}
+
+/* 🔹 Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-left .logo {
+  width: 40px;
+  height: 40px;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 20px;
+  font-size: 18px;
+}
+
+/* 🔹 Hero Section */
+.hero {
+  height: 150px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(90deg, #004d26, #00663d);
+}
+
+.hero-logo {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.hero p {
+  font-size: 16px;
+}
+
+/* 🔹 Layout Sections */
+.main-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+@media(min-width:768px){
+  .main-section {
+    flex-direction: row;
+  }
+}
+
+.card-section {
+  flex: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media(min-width: 576px){
+  .card-section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(min-width: 992px){
+  .card-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 🔹 Card Style */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  border: 1px solid #ddd;
+}
+
+/* Card Header - icon + texts stacked */
+.card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  padding: 10px;
+  border-radius: 12px;
+  background: #ffeaea; /* soft bg for icon */
+  object-fit: contain;
+}
+
+/* Info Section */
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.card-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.card-info .hotline {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 4px;
+  color: #000;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-top: 4px;
+  margin :5px;
+  flex: 0 0 auto;
+  background-color: lightgray;
+  
+}
+
+.badge.security {
+  background: #f2f2f2;
+  color: #000000FC;
+}
+
+/* Heart Button (top-right) */
+.heart-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heart-btn svg {
+  width: 24px;
+  height: 24px;
+  stroke: #45454A;
+}
+
+/* Actions (Copy & Call) */
+.card-actions {
+  display: flex;
+  width: 100%;
+  margin-top: 12px;
+  gap: 4px;
+}
+
+.card-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  cursor: pointer;
+  flex: 1; /* equal width */
+  transition: background 0.2s ease;
+}
+
+.card-actions button:first-child {
+  border-right: none; /* remove double border */
+}
+
+/* Specific Buttons */
+.copy-btn {
+  background-color: #f5f5f5;
+  color: #333;
+  border-radius: 5px;
+  height : 15px;
+}
+
+.call-btn {
+  background-color: #28a745;
+  color: #fff;
+  height: 15px;
+  border-radius: 5px;
+  padding-left: 4px;
+}
+
+.card-actions button:hover {
+  background: #eaeaea;
+  gap: 10px;
+}
+
+/* 🔹 History Section */
+.history-section {
+  flex: 1;
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  height: fit-content;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#historyList {
+  list-style: none;
+  color: #374151;
+}
+
