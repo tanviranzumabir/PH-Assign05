@@ -1,356 +1,819 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emergency Hotline</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency-Hotline</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap');
+
+.hind-madurai-regular {
+    font-family: "Hind Madurai", sans-serif;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* history card design */
+
+.history-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 24px;
+    padding: 16px;
+    border-radius: 10px;
+    flex-direction: column; 
+    gap: 20px;
+
+}
+
+.history-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FAFAFA;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 20px 16px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.history-info {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%;
+}
+
+.history-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-name {
+    font-weight: 600;
+}
+
+.service-number {
+    color: gray;
+}
+
+.history-time {
+    font-size: 0.9rem;
+}
+
+
+
+/* -------------------------------- */
+
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 60px;
+    background-color: #FFFFFF;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 30px;
+    margin: 0 20px;
+    color: #000000;
+    font-weight: 700;
+    border-radius: 50px;
+    background-color: #ECFFF0;
+}
+
+.nav-header {
+    font-size: 1.5rem;
+    line-height: 1;
+    padding-left: 10px;
+    color: #006747;
+}
+
+#copy {
+    background-color: #00A63E;
+    color: #ECFFF0;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #006747;
+    background: radial-gradient(circle, rgba(0, 103, 71, 1) 0%, rgba(1, 57, 39, 1) 100%);
+    color: #FFFFFF;
+    padding: 30px 0;
+    line-height: 1.8;
+}
+
+
+main {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    gap: 20px;
+    background-color: #F5FFF6;
+    width: 100%;
+    padding: 45px 45px 86px 58px;
+    box-sizing: border-box;
+}
+
+
+.card {
+    background-color: #FFFFFF;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.img-sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card img {
+    padding: 14px;
+    background-color: #FFE3E1;
+    border-radius: 16px;
+}
+
+.cards .card:nth-child(2) img {
+    background-color: #DFEFFF;
+}
+
+
+.card p {
+    color: gray;
+    padding-bottom: 10px;
+}
+
+.card-tag {
+    padding: 10px 16px;
+    border-radius: 20px;
+    background-color: #F2F2F2;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.btn-div button {
+    padding: 10px 54px;
+    font: hind-madurai-regular;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+
+.btn-left {
+    border: 1px solid rgb(183, 183, 183);
+    color: rgb(90, 89, 89);
+    background-color: #FFFFFF;
+}
+
+.btn-right {
+    border: none;
+    background-color: #00A63E;
+    color: #FFFFFF;
+}
+
+.btn-right:active {
+    background-color: #007a2c;
+}
+
+.btn-left:active {
+    background-color: gray;
+}
+
+
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+
+
+.sidebar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 24px;
+    padding-bottom: 16px;
+    border-radius: 20px 20px 0 0;
+}
+
+.sidebar-nav h2 {
+    font-weight: 600;
+}
+
+.sidebar-nav button {
+    padding: 14px 35px;
+    background-color: #00A63E;
+    color: #FFFFFF;
+    font-size: 1.15rem;
+    border: none;
+    border-radius: 50px;
+}
+
+.sidebar-nav button:active {
+    background-color: #007a2c;
+}
+
+.left-section {
+    height: 100%;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+
+
+
+
+@media (max-width: 576px) {
+    .nav-bar {
+        flex-direction: column;
+        padding: 20px 10px;
+        gap: 10px;
+    }
+
+    .nav-right p {
+        padding: 10px 16px;
+        margin: 0 8px;
+        font-size: 0.95rem;
+    }
+
+    .nav-header {
+        font-size: 1.1rem;
+        padding-left: 0;
+    }
+
+    .hero-section {
+        padding: 20px 8px;
+        text-align: center;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        padding: 20px 8px 40px 8px;
+        gap: 16px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .sidebar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 8px 10px 8px;
+        gap: 8px;
+    }
+
+    .sidebar-nav button {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 1rem;
+    }
+
+    .left-section {
+        border-radius: 12px;
+    }
+
+    .btn-div {
+        display: flex;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .btn-div button {
+        width: 100%;
+        padding: 10px 0;
+    }
+    
+}
+    </style>
 </head>
 <body>
+    <header class="hind-madurai-regular">
+        <div class="nav-bar">
+            <div class="nav-left">
+                <img class="nav-logo" src="./assets/logo.png" alt="website-logo" width="50px" height="50px">
+                <h1 class="nav-header">Emergency <br>Service</h1>
+            </div>
+            <div class="nav-right">
+                <p class="heart"><span id="main-heart">0</span>&nbsp;&nbsp;<img src="./assets/heart.png" alt="" width="30px"
+                        height="30px"></p>
+                <p class="coin"><span id="coins">100</span>&nbsp;&nbsp;<img src="./assets/coin.png" alt="" width="24px"
+                        height="24px"></p>
+                <p class="copy" id="copy"><span id="main-copy-count">0</span>&nbsp;&nbsp;Copy</p>
+            </div>
+        </div>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="navbar-left">
-      <img src="assets/logo.png" alt="Logo" class="logo">
-      <h1>Emergency<br>Service</h1>
-    </div>
-    <div class="navbar-right">
-      <span>❤️ <span id="heartCount">0</span></span>
-      <span>💰 <span id="coinCount">100</span></span>
-      <span>📋 <span id="copyCount">0</span></span>
-    </div>
-  </nav>
+        <div class="hero-section">
+            <img src="./assets/logo-dark.png" alt="middle-logo" height="92px" width="92px">
+            <h1>Emergency Service Directory</h1>
+            <h3>Government Emergency Services at Your Fingertip – A Project by Government of the People’s Republic of
+                Bangladesh</h3>
+        </div>
+    </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <img src="logo-dark.png" alt="Logo" class="hero-logo">
-    <h2>Emergency Service Directory</h2>
-    <p>Government Emergency Servics at Your Fingertip - A Project of Government of the People's Republic Bangladesh</p>
-  </section>
 
-  <!-- Main Section -->
-  <main class="main-section">
-    <!-- Card Section -->
-    <section class="card-section">
+    <main class="hind-madurai-regular">
+        <div class="right-section">
+            <div class="cards">
+                <div class="card">
+                    <div class="img-sec">
+                        <div class="img-left"><img src="./assets/emergency.png" alt="emergency-img" height="32px" width="32px">
+                        </div>
+                        <div class="img-right">
+                            <i class="fa-regular fa-heart heart-icon"></i>
+                        </div>
+                    </div>
+                    <h3>National Emergency Number</h3>
+                    <p>National Emergency</p>
+                    <h2>999</h2>
+                    <p class="card-tag">All</p>
+                    <div class="btn-div">
+                        <button class="btn-left"><i class="fa-solid fa-clone"></i>&nbsp;Copy</button>
+                        <button id="National Emergency" class="btn-right "><i class="fa-solid fa-phone"></i>&nbsp;Call</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-sec">
+                        <div class="img-left"><img src="./assets/police.png" alt="emergency-img" height="32px" width="32px">
+                        </div>
+                        <div class="img-right">
+                            <i class="fa-regular fa-heart heart-icon"></i>
+                        </div>
+                    </div>
+                    <h3>Police Helpline Number</h3>
+                    <p>Police</p>
+                    <h2>999</h2>
+                    <p class="card-tag">Police</p>
+                    <div class="btn-div">
+                        <button class="btn-left"><i class="fa-solid fa-clone"></i>&nbsp;Copy</button>
+                        <button id="Police Helpline Number" class="btn-right"><i class="fa-solid fa-phone"></i>&nbsp;Call</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-sec">
+                        <div class="img-left"><img src="./assets/fire-service.png" alt="emergency-img" height="32px" width="32px">
+                        </div>
+                        <div class="img-right">
+                            <i class="fa-regular fa-heart heart-icon"></i>
+                        </div>
+                    </div>
+                    <h3>Fire Service Number</h3>
+                    <p>Fire Service</p>
+                    <h2>999</h2>
+                    <p class="card-tag">Fire</p>
+                    <div class="btn-div">
+                        <button class="btn-left"><i class="fa-solid fa-clone"></i>&nbsp;Copy</button>
+                        <button id="Fire Service Number" class="btn-right"><i class="fa-solid fa-phone"></i>&nbsp;Call</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-sec">
+                        <div class="img-left"><img src="./assets/ambulance.png" alt="emergency-img" height="32px" width="32px">
+                        </div>
+                        <div class="img-right">
+                            <i class="fa-regular fa-heart heart-icon"></i>
+                        </div>
+                    </div>
+                    <h3>Ambulance Service</h3>
+                    <p>Ambulance</p>
+                    <h2>1994-999999</h2>
+                    <p class="card-tag">Health</p>
+                    <div class="btn-div">
+                        <button class="btn-left"><i class="fa-solid fa-clone"></i>&nbsp;Copy</button>
+                        <button id="Ambulance Service" class="btn-right"><i class="fa-solid fa-phone"></i>&nbsp;Call</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-sec">
+                        <div class="img-left"><img src="./assets/emergency.png" alt="emergency-img" height="32px" width="32px">
+                        </div>
+                        <div class="img-right">
+                            <i class="fa-regular fa-heart heart-icon"></i>
+                        </div>
+                    </div>
+                    <h3>Women & Child Helpline</h3>
+                    <p>Women & Child Helpline</p>
+                    <h2>109</h2>
+                    <p class="card-tag">Help</p>
+                    <div class="btn-div">
+                        <button class="btn-left"><i class="fa-solid fa-clone"></i>&nbsp;Copy</button>
+                        <button id="Women & Child Helpline" class="btn-right"><i class="fa-solid fa-phone"></i>&nbsp;Call</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-sec">
+                        <div class="img-left"><img src="./assets/emergency.png" alt="emergency-img" height="32px" width="32px">
+                        </div>
+                        <div class="img-right">
+                            <i class="fa-regular fa-heart heart-icon"></i>
+                        </div>
+                    </div>
+                    <h3>Anti-Corruption Helpline</h3>
+                    <p>Anti-Corruption</p>
+                    <h2>106</h2>
+                    <p class="card-tag">Govt.</p>
+                    <div class="btn-div">
+                        <button class="btn-left"><i class="fa-solid fa-clone"></i>&nbsp;Copy</button>
+                        <button id="Anti-Corruption Helpline" class="btn-right"><i class="fa-solid fa-phone"></i>&nbsp;Call</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-sec">
+                        <div class="img-left"><img src="./assets/emergency.png" alt="emergency-img" height="32px" width="32px">
+                        </div>
+                        <div class="img-right">
+                            <i class="fa-regular fa-heart heart-icon"></i>
+                        </div>
+                    </div>
+                    <h3>Electricity Helpline</h3>
+                    <p>Electricity Outage</p>
+                    <h2>16216</h2>
+                    <p class="card-tag">Electricity</p>
+                    <div class="btn-div">
+                        <button class="btn-left"><i class="fa-solid fa-clone"></i>&nbsp;Copy</button>
+                        <button id="Electricity Helpline" class="btn-right"><i class="fa-solid fa-phone"></i>&nbsp;Call</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-sec">
+                        <div class="img-left"><img src="./assets/brac.png" alt="emergency-img" height="32px" width="32px">
+                        </div>
+                        <div class="img-right">
+                            <i class="fa-regular fa-heart heart-icon"></i>
+                        </div>
+                    </div>
+                    <h3>Brac Helpline</h3>
+                    <p>Brac</p>
+                    <h2>16445</h2>
+                    <p class="card-tag">NGO</p>
+                    <div class="btn-div">
+                        <button class="btn-left"><i class="fa-solid fa-clone"></i>&nbsp;Copy</button>
+                        <button id="Brac Helpline" class="btn-right"><i class="fa-solid fa-phone"></i>&nbsp;Call</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-sec">
+                        <div class="img-left"><img src="./assets/Bangladesh-Railway.png" alt="emergency-img" height="32px" width="32px">
+                        </div>
+                        <div class="img-right">
+                            <i class="fa-regular fa-heart heart-icon"></i>
+                        </div>
+                    </div>
+                    <h3>Bangladesh Railway Helpline</h3>
+                    <p>Bangladesh Railway</p>
+                    <h2>163</h2>
+                    <p class="card-tag">Travel</p>
+                    <div class="btn-div">
+                        <button class="btn-left"><i class="fa-solid fa-clone"></i>&nbsp;Copy</button>
+                        <button id="Bangladesh Railway Helpline" class="btn-right"><i class="fa-solid fa-phone"></i>&nbsp;Call</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="left-section">
+            <div class="sidebar-nav">
+                <h2><i class="fa-regular fa-clock"></i>&nbsp;Call History</h2>
+                <button id="clear-btn" class="side-bar-btn hind-madurai-regular">Clear</button>
+            </div>
+            <div class="history-cards">
 
-      <!-- Example Card -->
-      <div class="card"></div>
-        <div class="card-header"></div>
-          <img src="emergency.png" alt="Icon" class="card-icon">
-          <div class="card-info">
-            <h3>National Emergency Number</h3>
-            <p>National Emergency</p>
-            <p class="hotline">999</p>
-            <span class="badge">All</span>
-          </div>
-          <button class="heart-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"></svg>
-              <path d="M12 21s-6.5-4.35-9.5-8.28C.9 10.1 2.1 5.5 6 4.1c2.2-.8 4.5.1 6 2.1 1.5-2 3.8-2.9 6-2.1 3.9 1.4 5.1 6 3.5 8.62C18.5 16.65 12 21 12 21z"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
+            </div>
         </div>
-        <div class="card-actions">
-          <button class="copy-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            Copy
-          </button>
-          <button class="call-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
-              <path d="M22 16.92V21a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.05 5.18 2 2 0 0 1 4 3h4.09a2 2 0 0 1 2 1.72c.12.81.37 1.59.73 2.32a2 2 0 0 1-.45 2.11L9.1 10.91a16 16 0 0 0 6 6l1.76-1.27a2 2 0 0 1 2.11-.45c.73.36 1.51.61 2.32.73a2 2 0 0 1 1.71 2z"></path>
-            </svg>
-            Call
-          </button>
-        </div>
-      </div>
+    </main>
 
-      <!-- Police Card -->
-      <div class="card">
-        <div class="card-header">
-          <img src="police.png" alt="Icon" class="card-icon">
-          <div class="card-info">
-            <h3>Police Helpline Number</h3>
-            <p>Police</p>
-            <p class="hotline">999</p>
-            <span class="badge">police</span>
-          </div>
-          <button class="heart-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"></svg>
-              <path d="M12 21s-6.5-4.35-9.5-8.28C.9 10.1 2.1 5.5 6 4.1c2.2-.8 4.5.1 6 2.1 1.5-2 3.8-2.9 6-2.1 3.9 1.4 5.1 6 3.5 8.62C18.5 16.65 12 21 12 21z"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
-        <div class="card-actions">
-          <button class="copy-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            Copy
-          </button>
-          <button class="call-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
-              <path d="M22 16.92V21a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.05 5.18 2 2 0 0 1 4 3h4.09a2 2 0 0 1 2 1.72c.12.81.37 1.59.73 2.32a2 2 0 0 1-.45 2.11L9.1 10.91a16 16 0 0 0 6 6l1.76-1.27a2 2 0 0 1 2.11-.45c.73.36 1.51.61 2.32.73a2 2 0 0 1 1.71 2z"></path>
-            </svg>
-            Call
-          </button>
-        </div>
-      </div>
+    <script>
+        // counting hearts
+const hearts = document.getElementsByClassName('heart-icon');
+let heartCount = 0;
+for (const heart of hearts) {
+    heart.addEventListener('click', function (e) {
+        e.preventDefault();
+        heartCount++;
+        document.getElementById('main-heart').innerText = heartCount;
+    });
+}
+// clear history
+const clearHistory = document.getElementById('clear-btn')
+    .addEventListener('click', function(e){
+        e.preventDefault();
 
-      <!-- Fire Service Card -->
-      <div class="card">
-        <div class="card-header">
-          <img src="fire-service.png" alt="Icon" class="card-icon">
-          <div class="card-info">
-            <h3>Fire Service Number</h3>
-            <p>Fire Service</p>
-            <p class="hotline">999</p>
-            <span class="badge">Fire</span>
-          </div>
-          <button class="heart-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"></svg>
-              <path d="M12 21s-6.5-4.35-9.5-8.28C.9 10.1 2.1 5.5 6 4.1c2.2-.8 4.5.1 6 2.1 1.5-2 3.8-2.9 6-2.1 3.9 1.4 5.1 6 3.5 8.62C18.5 16.65 12 21 12 21z"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
-        <div class="card-actions">
-          <button class="copy-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            Copy
-          </button>
-          <button class="call-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
-              <path d="M22 16.92V21a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.05 5.18 2 2 0 0 1 4 3h4.09a2 2 0 0 1 2 1.72c.12.81.37 1.59.73 2.32a2 2 0 0 1-.45 2.11L9.1 10.91a16 16 0 0 0 6 6l1.76-1.27a2 2 0 0 1 2.11-.45c.73.36 1.51.61 2.32.73a2 2 0 0 1 1.71 2z"></path>
-            </svg>
-            Call
-          </button>
-        </div>
-      </div>
-
-      <!-- Ambulance Card -->
-      <div class="card">
-        <div class="card-header">
-          <img src="ambulance.png" alt="Icon" class="card-icon">
-          <div class="card-info">
-            <h3>Ambulance Service</h3>
-            <p>Ambulance</p>
-            <p class="hotline">1994-999999</p>
-            <span class="badge">Health</span>
-          </div>
-          <button class="heart-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-              <path d="M12 21s-6.5-4.35-9.5-8.28C.9 10.1 2.1 5.5 6 4.1c2.2-.8 4.5.1 6 2.1 1.5-2 3.8-2.9 6-2.1 3.9 1.4 5.1 6 3.5 8.62C18.5 16.65 12 21 12 21z"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
-        <div class="card-actions">
-          <button class="copy-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            Copy
-          </button>
-          <button class="call-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
-              <path d="M22 16.92V21a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.05 5.18 2 2 0 0 1 4 3h4.09a2 2 0 0 1 2 1.72c.12.81.37 1.59.73 2.32a2 2 0 0 1-.45 2.11L9.1 10.91a16 16 0 0 0 6 6l1.76-1.27a2 2 0 0 1 2.11-.45c.73.36 1.51.61 2.32.73a2 2 0 0 1 1.71 2z"></path>
-            </svg>
-            Call
-          </button>
-        </div>
-      </div>
-
-      <!-- Women & Child Helpline Card -->
-      <div class="card">
-        <div class="card-header"></div>
-          <img src="emergency.png" alt="Icon" class="card-icon">
-          <div class="card-info">
-            <h3>Women & Child Helpline</h3>
-            <p>Disaster Service</p>
-            <p class="hotline">109</p>
-            <span class="badge">Help</span>
-          </div>
-          <button class="heart-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"></svg>
-              <path d="M12 21s-6.5-4.35-9.5-8.28C.9 10.1 2.1 5.5 6 4.1c2.2-.8 4.5.1 6 2.1 1.5-2 3.8-2.9 6-2.1 3.9 1.4 5.1 6 3.5 8.62C18.5 16.65 12 21 12 21z"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
-        <div class="card-actions">
-          <button class="copy-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            Copy
-          </button>
-          <button class="call-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
-              <path d="M22 16.92V21a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.05 5.18 2 2 0 0 1 4 3h4.09a2 2 0 0 1 2 1.72c.12.81.37 1.59.73 2.32a2 2 0 0 1-.45 2.11L9.1 10.91a16 16 0 0 0 6 6l1.76-1.27a2 2 0 0 1 2.11-.45c.73.36 1.51.61 2.32.73a2 2 0 0 1 1.71 2z"></path>
-            </svg>
-            Call
-          </button>
-        </div>
-      </div>
-
-      <!-- Anti-Corruption Helpline Card -->
-      <div class="card">
-        <div class="card-header">
-          <img src="emergency.png" alt="Icon" class="card-icon">
-          <div class="card-info">
-            <h3>Anti-Corruption Helpline</h3>
-            <p>Anti-Corruption</p>
-            <p class="hotline">106</p>
-            <span class="badge">Govt.</span>
-          </div>
-          <button class="heart-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"></svg>
-              <path d="M12 21s-6.5-4.35-9.5-8.28C.9 10.1 2.1 5.5 6 4.1c2.2-.8 4.5.1 6 2.1 1.5-2 3.8-2.9 6-2.1 3.9 1.4 5.1 6 3.5 8.62C18.5 16.65 12 21 12 21z"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
-        <div class="card-actions">
-          <button class="copy-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            Copy
-          </button>
-          <button class="call-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
-              <path d="M22 16.92V21a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.05 5.18 2 2 0 0 1 4 3h4.09a2 2 0 0 1 2 1.72c.12.81.37 1.59.73 2.32a2 2 0 0 1-.45 2.11L9.1 10.91a16 16 0 0 0 6 6l1.76-1.27a2 2 0 0 1 2.11-.45c.73.36 1.51.61 2.32.73a2 2 0 0 1 1.71 2z"></path>
-            </svg>
-            Call
-          </button>
-        </div>
-      </div>
-
-      <!-- Electricity Helpline Card -->
-      <div class="card">
-        <div class="card-header">
-          <img src="emergency.png" alt="Icon" class="card-icon">
-          <div class="card-info">
-            <h3>Electricity Helpline</h3>
-            <p>Electricity Outage</p>
-            <p class="hotline">16216</p>
-            <span class="badge">Electricity</span>
-          </div>
-          <button class="heart-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"></svg>
-              <path d="M12 21s-6.5-4.35-9.5-8.28C.9 10.1 2.1 5.5 6 4.1c2.2-.8 4.5.1 6 2.1 1.5-2 3.8-2.9 6-2.1 3.9 1.4 5.1 6 3.5 8.62C18.5 16.65 12 21 12 21z"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
-        <div class="card-actions">
-          <button class="copy-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            Copy
-          </button>
-          <button class="call-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
-              <path d="M22 16.92V21a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.05 5.18 2 2 0 0 1 4 3h4.09a2 2 0 0 1 2 1.72c.12.81.37 1.59.73 2.32a2 2 0 0 1-.45 2.11L9.1 10.91a16 16 0 0 0 6 6l1.76-1.27a2 2 0 0 1 2.11-.45c.73.36 1.51.61 2.32.73a2 2 0 0 1 1.71 2z"></path>
-            </svg>
-            Call
-          </button>
-        </div>
-      </div>
-
-      <!-- Brac Helpline Card -->
-      <div class="card">
-        <div class="card-header">
-          <img src="brac.png" alt="Icon" class="card-icon">
-          <div class="card-info">
-            <h3>Brac Helpline</h3>
-            <p>Brac</p>
-            <p class="hotline">16445</p>
-            <span class="badge support">NGO</span>
-          </div>
-          <button class="heart-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"></svg>
-              <path d="M12 21s-6.5-4.35-9.5-8.28C.9 10.1 2.1 5.5 6 4.1c2.2-.8 4.5.1 6 2.1 1.5-2 3.8-2.9 6-2.1 3.9 1.4 5.1 6 3.5 8.62C18.5 16.65 12 21 12 21z"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
-        <div class="card-actions">
-          <button class="copy-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            Copy
-          </button>
-          <button class="call-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
-              <path d="M22 16.92V21a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.05 5.18 2 2 0 0 1 4 3h4.09a2 2 0 0 1 2 1.72c.12.81.37 1.59.73 2.32a2 2 0 0 1-.45 2.11L9.1 10.91a16 16 0 0 0 6 6l1.76-1.27a2 2 0 0 1 2.11-.45c.73.36 1.51.61 2.32.73a2 2 0 0 1 1.71 2z"></path>
-            </svg>
-            Call
-          </button>
-        </div>
-      </div>
-
-      <!-- Bangladesh Railway Helpline Card -->
-      <div class="card">
-        <div class="card-header">
-          <img src="emergency.png" alt="Icon" class="card-icon">
-          <div class="card-info">
-            <h3>Bangladesh Railway Helpline</h3>
-            <p>Bangladesh Railway</p>
-            <p class="hotline">163</p>
-            <span class="badge support">Travel</span>
-          </div>
-          <button class="heart-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"></svg>
-              <path d="M12 21s-6.5-4.35-9.5-8.28C.9 10.1 2.1 5.5 6 4.1c2.2-.8 4.5.1 6 2.1 1.5-2 3.8-2.9 6-2.1 3.9 1.4 5.1 6 3.5 8.62C18.5 16.65 12 21 12 21z"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
-        <div class="card-actions">
-          <button class="copy-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            Copy
-          </button>
-          <button class="call-btn"></button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
-              <path d="M22 16.92V21a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.05 5.18 2 2 0 0 1 4 3h4.09a2 2 0 0 1 2 1.72c.12.81.37 1.59.73 2.32a2 2 0 0 1-.45 2.11L9.1 10.91a16 16 0 0 0 6 6l1.76-1.27a2 2 0 0 1 2.11-.45c.73.36 1.51.61 2.32.73a2 2 0 0 1 1.71 2z"></path>
-            </svg>
-            Call
-          </button>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- History Section -->
-    <aside class="history-section">
-      <div class="history-header">
-        <h2>📜 Call History</h2>
-        <button id="clearHistory">Clear History</button>
-      </div>
-      <ul id="historyList"></ul>
-    </aside>
-  </main>
-
+        const clearedHistory = document.getElementsByClassName('history-cards')[0];
+        clearedHistory.innerHTML = '';
+    })
+// call National Emergency
+const calls1 = document.getElementById('National Emergency')
+    .addEventListener('click', function (e) {
+        e.preventDefault();
+        let coins = parseInt(document.getElementById('coins').innerText);
+        if (coins >= 20) {
+            coins = coins - 20;
+            document.getElementById('coins').innerText = coins;
+            alert('Calling National Emergency 999...');
+            const now = new Date();
+            const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12:true });
+            const nationalEmergencyHistory = document.createElement('div');
+            nationalEmergencyHistory.classList.add('history-card');
+            nationalEmergencyHistory.innerHTML = `
+            <div class="history-info">
+                <div class="history-text">
+                    <p class="service-name">National Emergency Number</p>
+                    <hp class="service-number">999</p>
+                </div>
+                <p class="history-time">${time}</p>
+            </div>
+            `;
+            const historyContainer = document.querySelector('.history-cards');
+            historyContainer.appendChild(nationalEmergencyHistory);
+        }
+        else {
+            alert('No Enough Coin......!');
+        }
+    })
+// call Police Helpline Number
+const calls2 = document.getElementById('Police Helpline Number')
+    .addEventListener('click', function (e) {
+        e.preventDefault();
+        let coins = parseInt(document.getElementById('coins').innerText);
+        if (coins >= 20) {
+            coins = coins - 20;
+            document.getElementById('coins').innerText = coins;
+            alert('Calling Police 999...');
+            const now = new Date();
+            const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12:true });
+            const nationalEmergencyHistory = document.createElement('div');
+            nationalEmergencyHistory.classList.add('history-card');
+            nationalEmergencyHistory.innerHTML = `
+            <div class="history-info">
+                <div class="history-text">
+                    <p class="service-name">Police Helpline Number</p>
+                    <p class="service-number">999</p>
+                </div>
+                <p class="history-time">${time}</p>
+            </div>
+            `;
+            const historyContainer = document.querySelector('.history-cards');
+            historyContainer.appendChild(nationalEmergencyHistory);
+        }
+        else {
+            alert('No Enough Coin......!');
+        }
+    })
+// call Fire Service Number
+const calls3 = document.getElementById('Fire Service Number')
+    .addEventListener('click', function (e) {
+        e.preventDefault();
+        let coins = parseInt(document.getElementById('coins').innerText);
+        if (coins >= 20) {
+            coins = coins - 20;
+            document.getElementById('coins').innerText = coins;
+            alert('Calling Fire Service 999...');
+            const now = new Date();
+            const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12:true });
+            const nationalEmergencyHistory = document.createElement('div');
+            nationalEmergencyHistory.classList.add('history-card');
+            nationalEmergencyHistory.innerHTML = `
+            <div class="history-info">
+                <div class="history-text">
+                    <p class="service-name">Fire Service Number</p>
+                    <p class="service-number">999</p>
+                </div>
+                <p class="history-time">${time}</p>
+            </div>
+            `;
+            const historyContainer = document.querySelector('.history-cards');
+            historyContainer.appendChild(nationalEmergencyHistory);
+        }
+        else {
+           alert('No Enough Coin......!');
+        }
+    })
+// call Ambulance Service
+const calls4 = document.getElementById('Ambulance Service')
+    .addEventListener('click', function (e) {
+        e.preventDefault();
+        let coins = parseInt(document.getElementById('coins').innerText);
+        if (coins >= 20) {
+            coins = coins - 20;
+            document.getElementById('coins').innerText = coins;
+            alert('Calling Ambulance 1994-999999...');
+            const now = new Date();
+            const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12:true });
+            const nationalEmergencyHistory = document.createElement('div');
+            nationalEmergencyHistory.classList.add('history-card');
+            nationalEmergencyHistory.innerHTML = `
+            <div class="history-info">
+                <div class="history-text">
+                    <p class="service-name">Ambulance Service</p>
+                    <p class="service-number">1994-999999</p>
+                </div>
+                <p class="history-time">${time}</p>
+            </div>
+            `;
+            const historyContainer = document.querySelector('.history-cards');
+            historyContainer.appendChild(nationalEmergencyHistory);
+        }
+        else {
+           alert('No Enough Coin......!');
+        }
+    })
+// call Women & Child Helpline
+const calls5 = document.getElementById('Women & Child Helpline')
+    .addEventListener('click', function (e) {
+        e.preventDefault();
+        let coins = parseInt(document.getElementById('coins').innerText);
+        if (coins >= 20) {
+            coins = coins - 20;
+            document.getElementById('coins').innerText = coins;
+            alert('Calling Women & Child 109...');
+            const now = new Date();
+            const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12:true });
+            const nationalEmergencyHistory = document.createElement('div');
+            nationalEmergencyHistory.classList.add('history-card');
+            nationalEmergencyHistory.innerHTML = `
+            <div class="history-info">
+                <div class="history-text">
+                    <p class="service-name">Women & Child Helpline</p>
+                    <p class="service-number">109</p>
+                </div>
+                <p class="history-time">${time}</p>
+            </div>
+            `;
+            const historyContainer = document.querySelector('.history-cards');
+            historyContainer.appendChild(nationalEmergencyHistory);
+        }
+        else {
+           alert('No Enough Coin......!');
+        }
+    })
+// call Anti-Corruption Helpline
+const calls6 = document.getElementById('Anti-Corruption Helpline')
+    .addEventListener('click', function (e) {
+        e.preventDefault();
+        let coins = parseInt(document.getElementById('coins').innerText);
+        if (coins >= 20) {
+            coins = coins - 20;
+            document.getElementById('coins').innerText = coins;
+            alert('Calling Anti-Corruption 106...');
+            const now = new Date();
+            const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12:true });
+            const nationalEmergencyHistory = document.createElement('div');
+            nationalEmergencyHistory.classList.add('history-card');
+            nationalEmergencyHistory.innerHTML = `
+            <div class="history-info">
+                <div class="history-text">
+                    <p class="service-name">Anti-Corruption Helpline</p>
+                    <p class="service-number">106</p>
+                </div>
+                <p class="history-time">${time}</p>
+            </div>
+            `;
+            const historyContainer = document.querySelector('.history-cards');
+            historyContainer.appendChild(nationalEmergencyHistory);
+        }
+        else {
+            alert('No Enough Coin......!');
+        }
+    })
+// call Electricity Helpline
+const calls7 = document.getElementById('Electricity Helpline')
+    .addEventListener('click', function (e) {
+        e.preventDefault();
+        let coins = parseInt(document.getElementById('coins').innerText);
+        if (coins >= 20) {
+            coins = coins - 20;
+            document.getElementById('coins').innerText = coins;
+            alert('Calling Electricity 16216...');
+            const now = new Date();
+            const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12:true });
+            const nationalEmergencyHistory = document.createElement('div');
+            nationalEmergencyHistory.classList.add('history-card');
+            nationalEmergencyHistory.innerHTML = `
+            <div class="history-info">
+                <div class="history-text">
+                    <p class="service-name">Electricity Helpline</p>
+                    <p class="service-number">16216</p>
+                </div>
+                <p class="history-time">${time}</p>
+            </div>
+            `;
+            const historyContainer = document.querySelector('.history-cards');
+            historyContainer.appendChild(nationalEmergencyHistory);
+        }
+        else {
+            alert('No Enough Coin......!');
+        }
+    })
+//  call Brac Helpline
+const calls8 = document.getElementById('Brac Helpline')
+    .addEventListener('click', function (e) {
+        e.preventDefault();
+        let coins = parseInt(document.getElementById('coins').innerText);
+        if (coins >= 20) {
+            coins = coins - 20;
+            document.getElementById('coins').innerText = coins;
+            alert('Calling Brac 16445...');
+            const now = new Date();
+            const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12:true });
+            const nationalEmergencyHistory = document.createElement('div');
+            nationalEmergencyHistory.classList.add('history-card');
+            nationalEmergencyHistory.innerHTML = `
+            <div class="history-info">
+                <div class="history-text">
+                    <p class="service-name">Brac Helpline</p>
+                    <p class="service-number">16445</p>
+                </div>
+                <p class="history-time">${time}</p>
+            </div>
+            `;
+            const historyContainer = document.querySelector('.history-cards');
+            historyContainer.appendChild(nationalEmergencyHistory);
+        }
+        else {
+            alert('No Enough Coin......!');
+        }
+    })
+//  call Bangladesh Railway Helpline
+const calls9 = document.getElementById('Bangladesh Railway Helpline')
+    .addEventListener('click', function (e) {
+        e.preventDefault();
+        let coins = parseInt(document.getElementById('coins').innerText);
+        if (coins >= 20) {
+            coins = coins - 20;
+            document.getElementById('coins').innerText = coins;
+            alert('Calling Bangladesh Railway 163...');
+            const now = new Date();
+            const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12:true });
+            const nationalEmergencyHistory = document.createElement('div');
+            nationalEmergencyHistory.classList.add('history-card');
+            nationalEmergencyHistory.innerHTML = `
+            <div class="history-info">
+                <div class="history-text">
+                    <p class="service-name">Bangladesh Railway Helpline</p>
+                    <p class="service-number">163</p>
+                </div>
+                <p class="history-time">${time}</p>
+            </div>
+            `;
+            const historyContainer = document.querySelector('.history-cards');
+            historyContainer.appendChild(nationalEmergencyHistory);
+        }
+        else {
+            alert('No Enough Coin......!');
+        }
+    })
+// copy Count 
+const copys = document.getElementsByClassName('btn-left');
+let copyCount = 0;
+for (const copy of copys) {
+    copy.addEventListener('click', function (e) {
+        e.preventDefault();
+        const card = copy.closest('.card');
+        const number = card.querySelector('h2').innerText;
+        navigator.clipboard.writeText(number).then(function (e) {
+            alert('Youve Coppied : ' + number);
+        });
+        copyCount++;
+        document.getElementById('main-copy-count').innerText = copyCount;
+    });
+}
+    </script>
 </body>
 </html>
