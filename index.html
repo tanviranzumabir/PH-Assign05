@@ -19,7 +19,7 @@
     padding: 0;
 }
 
-/* history card design */
+/* hist card design */
 
 .history-cards {
     display: flex;
@@ -70,12 +70,7 @@
 .history-time {
     font-size: 0.9rem;
 }
-
-
-
-/* -------------------------------- */
-
-
+/* hist card design end */  
 .nav-bar {
     display: flex;
     justify-content: space-between;
@@ -520,7 +515,7 @@ main {
     </main>
 
     <script>
-        // counting hearts
+        //heart
 const hearts = document.getElementsByClassName('heart-icon');
 let heartCount = 0;
 for (const heart of hearts) {
@@ -530,7 +525,7 @@ for (const heart of hearts) {
         document.getElementById('main-heart').innerText = heartCount;
     });
 }
-// clear history
+//history
 const clearHistory = document.getElementById('clear-btn')
     .addEventListener('click', function(e){
         e.preventDefault();
@@ -538,7 +533,7 @@ const clearHistory = document.getElementById('clear-btn')
         const clearedHistory = document.getElementsByClassName('history-cards')[0];
         clearedHistory.innerHTML = '';
     })
-// call National Emergency
+//National Emergency
 const calls1 = document.getElementById('National Emergency')
     .addEventListener('click', function (e) {
         e.preventDefault();
@@ -567,7 +562,7 @@ const calls1 = document.getElementById('National Emergency')
             alert('No Enough Coin......!');
         }
     })
-// call Police Helpline Number
+//Police Helpline Number
 const calls2 = document.getElementById('Police Helpline Number')
     .addEventListener('click', function (e) {
         e.preventDefault();
@@ -596,7 +591,7 @@ const calls2 = document.getElementById('Police Helpline Number')
             alert('No Enough Coin......!');
         }
     })
-// call Fire Service Number
+//Fire Service Number
 const calls3 = document.getElementById('Fire Service Number')
     .addEventListener('click', function (e) {
         e.preventDefault();
@@ -625,7 +620,7 @@ const calls3 = document.getElementById('Fire Service Number')
            alert('No Enough Coin......!');
         }
     })
-// call Ambulance Service
+//Ambulance Service
 const calls4 = document.getElementById('Ambulance Service')
     .addEventListener('click', function (e) {
         e.preventDefault();
@@ -654,7 +649,7 @@ const calls4 = document.getElementById('Ambulance Service')
            alert('No Enough Coin......!');
         }
     })
-// call Women & Child Helpline
+//Women & Child Helpline
 const calls5 = document.getElementById('Women & Child Helpline')
     .addEventListener('click', function (e) {
         e.preventDefault();
@@ -683,7 +678,7 @@ const calls5 = document.getElementById('Women & Child Helpline')
            alert('No Enough Coin......!');
         }
     })
-// call Anti-Corruption Helpline
+//Anti-Corruption Helpline
 const calls6 = document.getElementById('Anti-Corruption Helpline')
     .addEventListener('click', function (e) {
         e.preventDefault();
@@ -712,7 +707,7 @@ const calls6 = document.getElementById('Anti-Corruption Helpline')
             alert('No Enough Coin......!');
         }
     })
-// call Electricity Helpline
+//Electricity Helpline
 const calls7 = document.getElementById('Electricity Helpline')
     .addEventListener('click', function (e) {
         e.preventDefault();
@@ -741,7 +736,7 @@ const calls7 = document.getElementById('Electricity Helpline')
             alert('No Enough Coin......!');
         }
     })
-//  call Brac Helpline
+//Brac Helpline
 const calls8 = document.getElementById('Brac Helpline')
     .addEventListener('click', function (e) {
         e.preventDefault();
@@ -770,7 +765,7 @@ const calls8 = document.getElementById('Brac Helpline')
             alert('No Enough Coin......!');
         }
     })
-//  call Bangladesh Railway Helpline
+// Bangladesh Railway Helpline
 const calls9 = document.getElementById('Bangladesh Railway Helpline')
     .addEventListener('click', function (e) {
         e.preventDefault();
@@ -799,7 +794,7 @@ const calls9 = document.getElementById('Bangladesh Railway Helpline')
             alert('No Enough Coin......!');
         }
     })
-// copy Count 
+//copy
 const copys = document.getElementsByClassName('btn-left');
 let copyCount = 0;
 for (const copy of copys) {
